@@ -1,0 +1,3 @@
+/home/kevin/beginnning/HOMEWORK/build/CMakeFiles/myapp.dir
+/home/kevin/beginnning/HOMEWORK/build/CMakeFiles/edit_cache.dir
+/home/kevin/beginnning/HOMEWORK/build/CMakeFiles/rebuild_cache.dir
