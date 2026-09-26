@@ -2,7 +2,7 @@
 #include "calculation.h"
 #define pi 3.14159265358
 using namespace std;
-double u,v,dis;//像素坐标与欧式距离
+double u,v;//像素坐标与欧式距离
 double x,y,z,tx,ty,tz,rx,ry,rz;//外参
 double fx,fy,cx,cy;//内参
 double R1[3][3]={0};
@@ -41,9 +41,7 @@ double cal()
     {
     u=fx*x0/z0+cx;
     v=fy*y0/z0+cy;
-    dis=sqrt(x0*x0+y0*y0+z0*z0);
     cout<<"像素坐标为(u,v):("<<u<<","<<v<<")"<<endl;
-    cout<<"欧式距离为:"<<dis<<endl;
     }//这里不考虑u和v的范围问题，假设像素坐标在图像范围内
     return 0;
 }
