@@ -6,7 +6,7 @@ double u,v;//像素坐标与欧式距离
 double x,y,z,tx,ty,tz,rx,ry,rz;//外参
 double fx,fy,cx,cy;//内参
 double R1[3][3]={0};
-double cal()
+bool cal()
 {
     cout<<"请输入相机内参fx,fy(焦距),cx,cy（像素中心）:"<<endl;
     cin>>fx>>fy>>cx>>cy;
@@ -30,12 +30,12 @@ double cal()
     if(z0<=0)
     {
         cout<<"点在相机后或在光心上，无法投影"<<endl;
-        return 0;
+        return false;
     }
-    else if(z0>0&&z0<1e-5)
+    else if(z0>0&&z0<0.001)
     {
         cout<<"点在相机前方，但距离光心过近，无法投影"<<endl;
-        return 0;
+        return false;
     }
     else
     {
@@ -43,7 +43,7 @@ double cal()
     v=fy*y0/z0+cy;
     cout<<"像素坐标为(u,v):("<<u<<","<<v<<")"<<endl;
     }//这里不考虑u和v的范围问题，假设像素坐标在图像范围内
-    return 0;
+    return true;
 }
 double cal_dis(double a,double b)
 {
